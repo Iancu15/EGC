@@ -1,0 +1,45 @@
+Se misca pe W, A, S, D. Pe click dreapta se schimba intre modul first person si modul third person.
+Pe click stanga se trage cu proiectile cand esti in modul de atac(first person). In dreapta jos
+ai un minimap pe care poti da zoom in/out apasand Q/E. Te poti vedea pe minimap ca fiind un patrat
+de culoarea pielii, inamicii niste obiecte rosii care se tot misca si de diverse culori se afla
+pickup-urile. Minimap-ul este centrat pe jucator si zoom-ul se face in jurul acestuia.
+
+Ca parte din HUD pe langa minimap mai este si healthbar-ul care se afla vertical in stanga acestuia
+cu rosu si timer-ul care se afla orizontal deasupra acestuia cu verde. Pierzi o parte din viata de
+fiecare data cand intrii in contact cu un inamic, procentul din viata pierdut depinde de cat mult
+ai stat in contact cu acesta. Timer-ul este setat la o valoare direct proportionala cu numarul minim
+de spatii pe care le-ai avea de parcurs. Cand ramai fara viata sau ti s-a terminat timpul, se opresc
+toate animatiile si iti va aparea in consola un mesaj. Poti apasa ENTER sa dai restart la joc
+intr-un alt labirint.
+
+Inamicii se plimba in spatiul lor urmarind traiectoria formei de mai jos:
+
+|\  /|
+| \/ |
+| /\ |
+|/  \|
+
+Uneori din cauza vitezei lor mari ajung sa deraieze si sa iasa pentru un frame din spatiu, in acel
+moment inamicul e readus la punctul sau de spawn ce este unul din cele 4 colturi si isi continua
+apoi traiectoria. In momentul in care mor, timp de 2 secunde au o animatie de discompunere in urma
+carei vor disparea.
+
+Proiectilele sunt niste bile rosii(iti poti imagina ca de foc) care in momentul in care ating inamicul
+il omoara si dispar. Acestea mai dispar cand au coliziuni cu exteriorul labirintului, cu peretii sau cu
+pickup-urile. Ele au o distanta maxima, dupa ce o parcurg dispar. Player-ul are un firerate default de
+1 proiectil la 0.5 secunde.
+
+Inainte de orice inamic se afla un pickup ce poate sa faca una din urmatoarele 4 chestii in functie
+de culoare:
+
+VERDE -> Creste viata cu 20% din viata maxima, nu ii poti da pick up daca ai viata deja maxima.
+MOV -> inamicii se opresc pe loc timp de 3 secunde, timp in care poti sa ii ocolesti
+MAGENTA -> inamicii incetinesc timp de 6 secunde, lucru ce iti face mai usoara omorarea lor
+GALBEN -> iti creste firerate-ul la 1 proiectil la 0.25 secunde
+
+Obs: Nu poti da pick up la MOV daca ai MAGENTA activ sau invers. Pickup-urile, cu timer, de aceeasi culoare
+isi stacheaza timer-urile. La MOV si timer-ul se opreste, la MAGENTA timpul se scurge mai greu.
+
+Exit-ul este reprezentat printr-o poarta albastra cu un sign verde sus pe mijloc. In momentul in care
+jucatorul trece prin el a castigat si se va afisa un mesaj in consola. Poate relua alta runda intr-un
+alt labirint apasand ENTER. Exista doar un exit per labirint.

@@ -1,0 +1,40 @@
+Jucatorul se misca pe W, A, S, D si pe click stanga trage cu proiectilul.
+
+In dreapta de tot se afla viata jucatorului ca un dreptunghi rosu vertical, in stanga lui se afla minimap-ul
+si deasupra acestuia 3 dreptunghiuri ce semnifica scorul: primul creste din 100 in 100 pana la 1000, al doilea
+din 10 in 10 pana la 100 si al treilea din 1 in 1 pana la 10. Cand un dreptunghi inferior ajunge la maxim, se
+reseteaza si se incrementeaza cel superior (Ex: cand al treilea ajunge la 10, devine 0 si al doilea se incrementeaza
+proportional in baza marimii dreptunghiului). Scorul maxim este 1000. Cand acesta este atins jocul continua, insa nu se
+va incrementa nici in cele 3 dreptunghiuri nici la total score-ul ce este afisat la moartea jucatorului. Jucatorul
+primeste 1 punct per inamic omorat.
+
+Cand jucatorul moare(health bar-ul ajunge la 0), orice animatie si spawn-are de inamici este oprita. Este afisat in
+consola total score-ul cumulat pana la moarte (ce reprezinta aceeasi valoare cu cea reprezentata de cele 3
+dreptunghiuri). Dupa ce jucatorul moare, acesta poate apasa ENTER pentru a relua jocul de la spawn cu score-ul 0.
+Pentru a iesi din joc se apasa ESC.
+
+Pe harta apar o serie de pickups care odata ridicate ofera jucatorului un ajutor. Ca sa fie ridicate jucatorul
+trebuie doar sa intre in coliziune cu ele. Sunt 4 tipuri de pickups ce pot aparea:
+
+-VERDE: creste viata jucatorului, acesta nu poate fi ridicat daca jucatorul are viata full.
+-GALBEN: dubleaza fire rate-ul jucatorului timp de 10 secunde.
+-MAGENTA(un fel de roz): jocul intra in slow motion timp de 5 secunde si anume proiectilele, inamicii si jucatorul
+se misca de 3 ori mai incet, inamicii se spawneaza de 3 ori mai incet.
+-MOV: jocul este oprit (inamicii stau pe loc) timp de 2 secunde, jucatorul si proiectilele acestuia nu sunt afectate,
+inamicii nu se mai spawneaza in acest timp.
+
+Proiectilele GALBEN, MAGENTA si MOV nu pot fi ridicate daca buff-ul lor inca este activ. Nu poti ridica MAGENTA daca
+MOV este activ si invers.
+
+Date de interes:
+
+Viteza inamici: 0.5-1.25
+Viteza player: 1
+Viteza proiectil: 1.25
+Viata maxima: 1
+Damage-ul unui inamic: 0.1
+Viata primita de un pickup VERDE: 0.2
+Timp intre spawn-are de inamici: 0.75 secunde
+Timp intre proiectile: 0.5 secunde (inversul la fire rate practic, prin el controlez fire rate-ul)
+Marime harta: 10x4 (marime coordonate XOY)
+Distanta maxima proiectil: 2 (marime coordonate XOY)
